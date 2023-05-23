@@ -1,0 +1,29 @@
+# Stage 1: Compile and Build angular codebase
+
+# Use official node image as the base image
+FROM node:14 as node-angular-cli
+
+RUN apt-get update
+RUN apt-get install dos2unix
+
+RUN npm install -g @angular/cli@13
+
+ADD ./docker/angular/docker-entrypoint.sh /usr/local/entrypoint.sh
+RUN chmod +x /usr/local/entrypoint.sh
+# Set the working directory
+WORKDIR /usr/local/angular
+
+RUN dos2unix /usr/local/entrypoint.sh
+ENTRYPOINT ["/usr/local/entrypoint.sh"]
+
+# Stage 2: Serve app with nginx server
+
+# Use official nginx image as the base image
+#FROM nginx:latest
+
+# Copy the build output to replace the default nginx contents.
+#COPY --from=build ./front/TestDev /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 4200:4200
+CMD ["ng","serve","--host", "0.0.0.0", "--poll", "1"]
