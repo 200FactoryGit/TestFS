@@ -1,6 +1,6 @@
-import { Component, NgModule } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
+import { Component, NgModule } from "@angular/core";
+import { Router, RouterModule, Routes } from "@angular/router";
+import { LoginComponent } from "./pages/login/login.component";
 import {
   NbAuthComponent,
   NbLoginComponent,
@@ -8,12 +8,12 @@ import {
   NbLogoutComponent,
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
-} from '@nebular/auth';
-import { UsersComponent } from './pages/users/users.component';
+} from "@nebular/auth";
+import { UsersComponent } from "./pages/users/users.component";
 const routes: Routes = [
   //{path:'login',component:LoginComponent},
-  //{path:'**',component:LoginComponent},
-  {
+  { path: "**", component: UsersComponent },
+  /**  {
     path: 'auth',
     component: NbAuthComponent,
     children: [
@@ -40,17 +40,16 @@ const routes: Routes = [
     ],
     
   }
-  ,
-  {path : 'users', component:UsersComponent  }
+  , */
+  { path: "users", component: UsersComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { 
-  constructor(private router:Router)
-  {
-    this.router.navigate(['/auth']);
+export class AppRoutingModule {
+  constructor(private router: Router) {
+    this.router.navigate(["/auth"]);
   }
 }
