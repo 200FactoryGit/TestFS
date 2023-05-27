@@ -1,0 +1,75 @@
+
+
+html,
+body {
+  height: 0 !important;
+}
+
+.main-div {
+  margin: 0;
+  padding: 50px 15px;
+  display: table;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+
+.flexbox-container {
+  display: -webkit-flex;
+  height: 100vh;
+  -webkit-box-align: center;
+  align-items: center;
+  background: #c2c5c5;
+}
+
+.mat-form-field {
+  display: block !important;
+}
+
+.worningMsg {
+  color: red;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  right: 0;
+  margin-bottom: 4%;
+}
+
+.mat-card {
+  margin: 0 auto;
+  padding: 70px 50px 50px;
+  width: 400px;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: -12px 5px 64px 0 rgba(116, 151, 209, 0.979);
+}
+
+.mat-icon {
+  width: 1.3em !important;
+  font-size: 120% !important;
+}
+
+.mat-card-header {
+  display: inherit !important;
+}
+
+.headerMargin {
+  margin-bottom: 15%;
+}
+
+
+/* .mat-form-field {
+  width: 80%;
+  margin-left: 15%;
+} */
+
+.hintError {
+  /*margin-left: 18%;*/
+}
+
+.custumDivider {
+  display: block !important;
+  position: relative !important;
+  text-align: left;
+}

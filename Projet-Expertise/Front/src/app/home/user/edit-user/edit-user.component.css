@@ -1,0 +1,56 @@
+.mat-form-field {
+  display: block !important;
+}
+
+.worningMsg {
+  color: red;
+}
+
+.mat-icon {
+  width: 1.3em !important;
+  font-size: 120% !important;
+}
+
+.mat-card {
+  padding: 70px 50px 30px;
+  width: 544px;
+  border-radius: 2px;
+  background-color: #fff;
+  box-shadow: -12px 5px 64px 0 rgba(164, 164, 164, 0.25);
+}
+
+.mat-card-header {
+  display: inherit !important;
+}
+
+.headerMargin {
+  margin-bottom: 15%;
+}
+
+.mat-form-field {
+  width: 80%;
+  margin-left: 15%;
+}
+
+.red-info-circle {
+  display: inline-block !important;
+  color: #F45D6C;
+  background: none;
+  border: none;
+}
+
+.green-check-circle {
+  display: inline-block !important;
+  color: green;
+  background: none;
+  border: none;
+}
+
+.mat-hint {
+  color: red;
+}
+
+.btnStyle {
+  background-color: #1f2540 !important; ;
+  color: white;
+}

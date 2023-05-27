@@ -1,0 +1,58 @@
+
+<body class="theme-cyan">
+<div id="wrapper">
+  <div class="vertical-align-wrap">
+    <div class="vertical-align-middle auth-main">
+      <div class="auth-box">
+
+        <div class="top">
+          <img src="../../../assets/images/titre.png" alt="Lucid">
+        </div>
+        <div class="card">
+          <div class="header">
+            <p class="lead">Connectez-vous à votre compte</p>
+          </div>
+          <div class="body">
+            <form class="form-auth-small" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="signin-email" class="control-label sr-only">Nom utilisateur</label>
+                <input type="email" class="geoxyForm form-control" matInput id="signin-email" (click)="hideErrorMsg()" name="login" type="text" placeholder="Nom d'utilisateur" formControlName="login">
+                <div *ngIf="submitted && showErrorMsg.login?.errors && errorMsg">
+                  <mat-hint class="hintError" *ngIf="showErrorMsg.login.errors.required" class="worningMsg">Pseudo obligatoire
+                  </mat-hint>
+                  <mat-hint class="hintError" *ngIf="showErrorMsg.login.errors.pattern" class="worningMsg">Pseudo Invalid</mat-hint>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="signin-password" class="control-label sr-only">Mot de passe</label>
+                <input type="password" class="geoxyForm form-control " id="signin-password" (click)="hideErrorMsg()" matInput name="password" type="password" placeholder="Enter mot de passe " formControlName="password">
+
+                <div *ngIf="submitted && showErrorMsg.password?.errors && errorMsg">
+                  <mat-hint class="hintError" *ngIf="showErrorMsg.password.errors.required" class="worningMsg">Mot de passe obligatoire
+                  </mat-hint>
+                  <mat-hint class="hintError" *ngIf="showErrorMsg.password.errors.minlength" class="worningMsg">Taille supérieur à 8 caractères
+                  </mat-hint>
+                </div>
+              </div>
+              <!-- <div class="form-group clearfix">
+                  <label class="fancy-checkbox element-left">
+                    <input type="checkbox">
+                    <span>Souvgarder</span>
+                </label>
+              </div> -->
+              <button type="submit" class="btn btn-primary btn-lg btn-block"> Connexion</button>
+              <div class="bottom">
+                 <span>Vous n'avez pas un compte?<a routerLink="/inscription" > Inscription</a></span>
+              </div>
+              <div class="bottom">
+                <span>Vous avez oublié votre mot de passe?<a routerLink="/resetpassword" > Envoyer mon mot de passe</a></span>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
